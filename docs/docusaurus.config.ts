@@ -134,6 +134,14 @@ const config: Config = {
   ],
 
   themeConfig: {
+    announcementBar: {
+      id: "preview-not-for-production",
+      content:
+        "⚠️ AppKit is in an early development phase and is subject to change without notice. <strong>DO NOT</strong> use in production environments.",
+      backgroundColor: "#f0f0f0",
+      textColor: "#000000",
+      isCloseable: true,
+    },
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -223,7 +231,25 @@ const config: Config = {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
     },
+    mermaid: {
+      theme: { light: "base", dark: "base" },
+      options: {
+        themeVariables: {
+          // Light mode colors (bluish) - matches Docusaurus theme
+          primaryColor: "#e3f2fd", // Light blue background
+          primaryTextColor: "#1b3139", // Dark text from custom.css
+          primaryBorderColor: "#2272b4", // Primary blue border
+          lineColor: "#2272b4", // Connection lines
+          secondaryColor: "#bbdefb", // Secondary elements
+          tertiaryColor: "#f5f5f5", // Tertiary elements
+        },
+      },
+    },
   } satisfies Preset.ThemeConfig,
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
 };
 
 export default config;
