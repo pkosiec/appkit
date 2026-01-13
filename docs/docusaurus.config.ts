@@ -51,7 +51,7 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  url: "https://databricks.github.io",
+  url: "https://pkosiec.github.io",
   baseUrl: "/appkit/",
 
   organizationName: "databricks",

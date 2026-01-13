@@ -18,9 +18,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on:
-      group: databricks-protected-runner-group
-      labels: linux-ubuntu-latest
+    runs-on: ubuntu-latest
 
     name: Build Docs
     steps:
@@ -40,9 +38,7 @@ jobs:
           path: ./docs/build
 
   deploy:
-    runs-on:
-      group: databricks-protected-runner-group
-      labels: linux-ubuntu-latest
+    runs-on: ubuntu-latest
 
     name: Deploy to GitHub Pages
     needs: build
